@@ -12,7 +12,7 @@ import lombok.Data;
 public class Tweet {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int id;
+  private Long id;
 
   @Column(length = 20, nullable = false)
   private String username;
