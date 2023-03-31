@@ -1,5 +1,7 @@
 package com.tweetero.api.models;
 
+import com.tweetero.api.dtos.TweetDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +12,13 @@ import lombok.Data;
 @Data
 @Entity
 public class Tweet {
+
+  public Tweet(TweetDTO data) {
+    this.username = data.username();
+    this.avatar = data.avatar();
+    this.text = data.text();
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
